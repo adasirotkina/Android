@@ -23,7 +23,7 @@ class ExampleUnitTest {
 
     @Test
     fun increment_test(){
-        var b = 2
-        assertEquals(3, b++)
+        var c = 2
+        assertEquals(3, c++)
     }
 }
