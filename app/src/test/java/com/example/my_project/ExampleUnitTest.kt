@@ -19,4 +19,16 @@ class ExampleUnitTest {
     fun multiplication_test(){
         assertEquals(4, 2 * 2)
     }
+
+
+    @Test
+    fun increment_test(){
+        var d = 2
+        assertEquals(3, d++)
+    }
+
+    @Test
+    fun other_test(){
+        assertEquals(3, 1 * 2 + 1)
+    }
 }
