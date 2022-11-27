@@ -26,4 +26,9 @@ class ExampleUnitTest {
         var d = 2
         assertEquals(3, d++)
     }
+
+    @Test
+    fun other_test(){
+        assertEquals(3, 1 * 2 + 1)
+    }
 }
