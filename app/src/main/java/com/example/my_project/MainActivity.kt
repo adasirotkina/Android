@@ -1,16 +1,21 @@
 package com.example.my_project
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
+import android.view.ActionMode
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
+import com.example.my_project.DogDetailActivity.Companion.DOG_DETAIL_RESULT_KEY
 
 class MainActivity : BaseActivity() {
 
     companion object {
-        private val COUNTER_KEY = "COUNTER_KEY"
+        private const val COUNTER_KEY = "COUNTER_KEY"
+        private const val DOG_DETAIL_REQUEST_CODE = 10
     }
 
     private var counter: Int = 0
@@ -23,6 +28,45 @@ class MainActivity : BaseActivity() {
         button?.setOnClickListener {
             add()
         }
+
+        findViewById<Button>(R.id.mainDetail)?.setOnClickListener {
+            openDetail()
+        }
+
+        findViewById<Button>(R.id.main_search)?.setOnClickListener {
+            openSearch()
+        }
+    }
+
+    private fun openDetail() {
+        val dog = Dog("Baks",
+             10)
+        startActivityForResult(
+            Intent(this, DogDetailActivity::class.java)
+                .apply {
+                    putExtra(DogDetailActivity.DOG_DETAIL_ARGUMENT_KEY, dog )
+                },
+            DOG_DETAIL_REQUEST_CODE
+        )
+    }
+
+    private fun openSearch() {
+        startActivity(Intent(this, SearchActivity::class.java))
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == DOG_DETAIL_REQUEST_CODE) {
+            val dataValue = data?.getIntExtra(DogDetailActivity.DOG_DETAIL_RESULT_KEY, 0)
+            if (dataValue != null) {
+                showResult(dataValue)
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data)
+        }
+    }
+
+    private fun showResult(result:Int){
+        Toast.makeText(this, result.toString(), Toast.LENGTH_SHORT).show()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
