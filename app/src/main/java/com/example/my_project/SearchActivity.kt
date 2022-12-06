@@ -68,11 +68,11 @@ class SearchActivity : BaseActivity() {
         }
         viewModel.errorMessage.observe(this) {
             showError(it.toText())
-            println("Error3")
         }
     }
     private fun showError(text: String){
-        Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+        println("Error4 $text")
+        Toast.makeText(this, text, Toast.LENGTH_LONG).show()
     }
     private fun SearchErrorType.toText(): String {
         return when (this){
