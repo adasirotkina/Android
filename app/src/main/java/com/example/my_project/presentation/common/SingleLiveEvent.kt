@@ -1,4 +1,4 @@
-package com.example.my_project
+package com.example.my_project.presentation.common
 
 import android.util.Log
 import androidx.annotation.MainThread

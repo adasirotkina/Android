@@ -1,4 +1,4 @@
-package com.example.my_project
+package com.example.my_project.presentation.search
 
 import android.os.Bundle
 import android.view.View
@@ -7,7 +7,9 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.example.my_project.*
 import com.example.my_project.databinding.ActivitySearchBinding
+import com.example.my_project.presentation.common.BaseActivity
 
 class SearchActivity : BaseActivity() {
 

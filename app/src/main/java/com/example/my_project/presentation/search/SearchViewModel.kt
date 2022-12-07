@@ -3,6 +3,7 @@ package com.example.my_project
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.my_project.presentation.common.SingleLiveEvent
 
 class SearchViewModel: ViewModel() {
 
