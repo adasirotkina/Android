@@ -3,26 +3,28 @@ package com.example.my_project
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.my_project.domain.DogReprository
+import com.example.my_project.domain.RandomDogTypes
+import com.example.my_project.entity.Dog
 import com.example.my_project.presentation.common.SingleLiveEvent
+import kotlinx.coroutines.launch
 
-class RandomDogViewModel(): ViewModel() {
-    private val _dogs = MutableLiveData(listOf<Dog>(
-        Dog("April", 2),
-        Dog("Rango", 6),
-        Dog("Goofy", 2),
-        Dog("Kliko", 3),
-        Dog("Layfa", 3),
-        Dog("Vikki", 4),
-        Dog("Salvador", 2),
-        Dog("Ocean", 1),
-        Dog("Night", 1),
-        Dog("Fiksik", 10),
-    ))
-
+class RandomDogViewModel(
+    private val dogReprository: DogReprository
+): ViewModel() {
+    private val _dogs = MutableLiveData<List<Dog>>()
     val dogs: LiveData<List<Dog>> = _dogs
 
     private val _openDetail = SingleLiveEvent<Dog>()
     val openDetail: LiveData<Dog> = _openDetail
+
+    init {
+        viewModelScope.launch {
+            val dogs = dogReprository.getAllDog()
+            _dogs.value = dogs
+        }
+    }
 
     fun onDogClick(dog: Dog) {
         _openDetail.value = dog
