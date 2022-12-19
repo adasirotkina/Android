@@ -6,8 +6,10 @@ import kotlinx.serialization.Serializable
 
 @Parcelize
 @Serializable
-data class Dog (
+data class Dog(
     val name: String,
-    val age: Int,
-    val posterUrl: String?
+    val age: String,
+    val posterUrl: String?,
+    val description: String?,
+    val contact: String?,
 ) : Parcelable

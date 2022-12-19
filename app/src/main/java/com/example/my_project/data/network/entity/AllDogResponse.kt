@@ -6,6 +6,8 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class AllDogResponse(
-    @SerialName("all_dogs")
-    val allDogs: List<AllDog?>?
+    @SerialName("dogs")
+    val dogs: List<Dog?>?,
+    @SerialName("shelter")
+    val shelter: String?
 )

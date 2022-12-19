@@ -3,6 +3,7 @@ package com.example.my_project
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -48,8 +49,26 @@ class RandomDogActivity : BaseActivity() {
         viewBinding.randomDogsFavorites.setOnClickListener {
             openFavorites()
         }
-        viewModel.dogs.observe(this) {
-            dogs -> randomDogAdapter.setData(dogs)
+        viewModel.state.observe(this) {state ->
+            when(state){
+                is RandomDogState.Error -> {
+                    viewBinding.randomDogsProgress.isVisible = false
+                    viewBinding.randomDogError.isVisible = true
+                    viewBinding.randomDogsList.isVisible = false
+                    viewBinding.randomDogError.setOnClickListener {viewModel.onRetry()}
+                }
+                RandomDogState.Loading -> {
+                    viewBinding.randomDogsProgress.isVisible = true
+                    viewBinding.randomDogError.isVisible = false
+                    viewBinding.randomDogsList.isVisible = false
+                }
+                is RandomDogState.Succes -> {
+                    viewBinding.randomDogsProgress.isVisible = false
+                    viewBinding.randomDogError.isVisible = false
+                    viewBinding.randomDogsList.isVisible = true
+                    randomDogAdapter.setData(state.dogs)
+                }
+            }
         }
         viewModel.openDetail.observe(this) {
             openDetail(it)

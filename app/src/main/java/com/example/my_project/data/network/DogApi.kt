@@ -5,6 +5,9 @@ import retrofit2.http.GET
 
 interface DogApi {
 
-    @GET("all_dogs")
-    suspend fun getAllDogs(): AllDogResponse
+    @GET("dogsfromshelters")
+    suspend fun getAllDogs(
+//        @Query("type") type: String,
+//        @Query("limit") limit: Int,
+    ): AllDogResponse
 }

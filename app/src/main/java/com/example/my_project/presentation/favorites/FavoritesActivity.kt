@@ -33,6 +33,7 @@ class FavoritesActivity : BaseActivity() {
     private val favoritesAdapter = RandomDogAdapter {viewMode.onDogClick(it)}
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favorites)
@@ -41,7 +42,10 @@ class FavoritesActivity : BaseActivity() {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             adapter = favoritesAdapter
         }
-
+        viewBinding.favoritesBack.setOnClickListener {
+            setResult(RESULT_OK, Intent().putExtra(DogDetailActivity.DOG_DETAIL_RESULT_KEY, 10))
+            finish()
+        }
         viewMode.openDetail.observe(this) {
             openDetail(it)
         }

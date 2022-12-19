@@ -5,13 +5,19 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class AllDog(
+data class Dog(
     @SerialName("age")
-    val age: Int?,
+    val age: String?,
+    @SerialName("contact")
+    val contact: String?,
+    @SerialName("description")
+    val description: String?,
     @SerialName("gender")
     val gender: String?,
     @SerialName("id")
     val id: Int?,
+    @SerialName("image")
+    val image: String?,
     @SerialName("name")
     val name: String?
 )

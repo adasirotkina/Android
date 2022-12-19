@@ -76,6 +76,47 @@
 
             </RadioGroup>
 
+<!--            <TextView-->
+<!--                android:id="@+id/search_dog_age_title"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingStart="20dp"-->
+<!--                android:text="Возраст"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="14sp"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/search_dog_type_group"/>-->
+
+<!--            <RadioGroup-->
+<!--                android:id="@+id/search_dog_type_age"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingStart="20dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/search_dog_age_title">-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/search_dog_type_group_old"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Взрослые собаки" />-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/search_dog_type_group_young"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Щенки" />-->
+
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/search_dog_age_group_all"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Все" />-->
+
+
+<!--            </RadioGroup>-->
+
             <TextView
                 android:id="@+id/search_age_title"
                 android:layout_width="match_parent"

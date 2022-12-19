@@ -2,7 +2,6 @@ package com.example.my_project.presentation.detail
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -12,6 +11,7 @@ import com.example.my_project.entity.Dog
 import com.example.my_project.R
 import com.example.my_project.databinding.ActivityDogDetailBinding
 import com.example.my_project.di.FavoritesDaoProvider
+import com.example.my_project.presentation.common.setImageUrl
 
 
 class DogDetailActivity : BaseActivity() {
@@ -40,6 +40,9 @@ class DogDetailActivity : BaseActivity() {
         val dog = intent.getParcelableExtra<Dog>(DOG_DETAIL_ARGUMENT_KEY)
 
         viewBinding.dogName.text = dog?.name
+        viewBinding.dogDetailPosters.setImageUrl(dog?.posterUrl)
+        viewBinding.dogDescription.text = dog?.description
+        viewBinding.dogContact.text = "По всем вопросам: ${dog?.contact}"
 
         viewBinding.dogDetailBack.setOnClickListener {
             setResult(RESULT_OK, Intent().putExtra(DOG_DETAIL_RESULT_KEY, 10))

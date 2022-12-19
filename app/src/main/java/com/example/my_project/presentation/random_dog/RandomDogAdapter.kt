@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.my_project.entity.Dog
 import com.example.my_project.databinding.RandomDogsItemsBinding
-import com.example.my_project.presentation.common.setImafeUrl
+import com.example.my_project.presentation.common.setImageUrl
 
 class RandomDogAdapter(
     private val onDogClick: (Dog) -> Unit,
@@ -42,7 +42,7 @@ class RandomDogAdapter(
         with(holder.binding){
             randomDogsItemName.text = item.name
             randomDogsItemAge.text = item.age.toString()
-            randomDogPosters.setImafeUrl(item.posterUrl)
+            randomDogPosters.setImageUrl(item.posterUrl)
             root.setOnClickListener { onDogClick(item) }
         }
     }
