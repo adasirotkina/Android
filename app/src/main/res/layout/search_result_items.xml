@@ -39,4 +39,16 @@
         android:textColor="@color/black"
         tools:text = "2 years"/>
 
+    <TextView
+        android:id="@+id/search_result_dogs_item_gender"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@+id/search_result_dog_posters"
+        app:layout_constraintTop_toBottomOf="@+id/search_result_dogs_item_age"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/black"
+        tools:text = "2 years"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

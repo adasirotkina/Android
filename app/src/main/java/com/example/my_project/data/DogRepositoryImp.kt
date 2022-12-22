@@ -28,6 +28,7 @@ class DogRepositoryImp(
                 posterUrl = it?.image ?: return@mapNotNull null,
                 description = it?.description ?: return@mapNotNull null,
                 contact = it?.contact ?: return@mapNotNull null,
+                gender = it?.gender ?: return@mapNotNull null,
             )
         } ?: emptyList()
     }

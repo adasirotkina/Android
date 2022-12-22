@@ -12,4 +12,5 @@ data class Dog(
     val posterUrl: String?,
     val description: String?,
     val contact: String?,
+    val gender: String?,
 ) : Parcelable

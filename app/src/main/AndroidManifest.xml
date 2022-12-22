@@ -32,6 +32,7 @@
         <activity android:name=".presentation.search.SearchActivity" />
         <activity android:name=".presentation.favorites.FavoritesActivity" />
         <activity android:name=".presentation.common.BaseActivity" />
+        <activity android:name=".presentation.search.SearchResultActivity" />
     </application>
 
 </manifest>
