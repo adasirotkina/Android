@@ -1,4 +1,4 @@
-package com.example.my_project
+package com.example.my_project.presentation.search
 
 import android.os.Bundle
 import android.view.View
@@ -7,7 +7,9 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.example.my_project.*
 import com.example.my_project.databinding.ActivitySearchBinding
+import com.example.my_project.presentation.common.BaseActivity
 
 class SearchActivity : BaseActivity() {
 
@@ -68,11 +70,11 @@ class SearchActivity : BaseActivity() {
         }
         viewModel.errorMessage.observe(this) {
             showError(it.toText())
-            println("Error3")
         }
     }
     private fun showError(text: String){
-        Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+        println("Error4 $text")
+        Toast.makeText(this, text, Toast.LENGTH_LONG).show()
     }
     private fun SearchErrorType.toText(): String {
         return when (this){

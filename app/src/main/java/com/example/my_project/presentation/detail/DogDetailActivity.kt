@@ -1,9 +1,12 @@
-package com.example.my_project
+package com.example.my_project.presentation.detail
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import com.example.my_project.presentation.common.BaseActivity
+import com.example.my_project.Dog
+import com.example.my_project.R
 
 class DogDetailActivity : BaseActivity() {
 

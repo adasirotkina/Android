@@ -14,7 +14,7 @@
         android:theme="@style/Theme.My_Project"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".RandomDogActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,8 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DogDetailActivity" />
-        <activity android:name=".SearchActivity" />
+        <activity android:name=".presentation.detail.DogDetailActivity" />
+        <activity android:name=".presentation.search.SearchActivity" />
     </application>
 
 </manifest>
