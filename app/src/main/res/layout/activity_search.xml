@@ -76,46 +76,46 @@
 
             </RadioGroup>
 
-<!--            <TextView-->
-<!--                android:id="@+id/search_dog_age_title"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:paddingStart="20dp"-->
-<!--                android:text="Возраст"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textSize="14sp"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/search_dog_type_group"/>-->
+            <!--            <TextView-->
+            <!--                android:id="@+id/search_dog_age_title"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:paddingStart="20dp"-->
+            <!--                android:text="Возраст"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:textSize="14sp"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/search_dog_type_group"/>-->
 
-<!--            <RadioGroup-->
-<!--                android:id="@+id/search_dog_type_age"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:paddingStart="20dp"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/search_dog_age_title">-->
+            <!--            <RadioGroup-->
+            <!--                android:id="@+id/search_dog_type_age"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:paddingStart="20dp"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/search_dog_age_title">-->
 
-<!--                <RadioButton-->
-<!--                    android:id="@+id/search_dog_type_group_old"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Взрослые собаки" />-->
+            <!--                <RadioButton-->
+            <!--                    android:id="@+id/search_dog_type_group_old"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="Взрослые собаки" />-->
 
-<!--                <RadioButton-->
-<!--                    android:id="@+id/search_dog_type_group_young"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Щенки" />-->
-
-
-<!--                <RadioButton-->
-<!--                    android:id="@+id/search_dog_age_group_all"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Все" />-->
+            <!--                <RadioButton-->
+            <!--                    android:id="@+id/search_dog_type_group_young"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="Щенки" />-->
 
 
-<!--            </RadioGroup>-->
+            <!--                <RadioButton-->
+            <!--                    android:id="@+id/search_dog_age_group_all"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="Все" />-->
+
+
+            <!--            </RadioGroup>-->
 
             <TextView
                 android:id="@+id/search_age_title"
@@ -172,61 +172,61 @@
                 app:layout_constraintTop_toBottomOf="@id/search_age_from_title" />
 
 
-            <TextView
-                android:id="@+id/search_size_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:paddingStart="20sp"
-                android:text="Размер"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/search_age_to_spinner" />
+            <!--            <TextView-->
+            <!--                android:id="@+id/search_size_title"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="16dp"-->
+            <!--                android:paddingStart="20sp"-->
+            <!--                android:text="Размер"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/search_age_to_spinner" />-->
 
-            <TextView
-                android:id="@+id/search_size_from_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="20dp"
-                android:text="от"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toTopOf="@+id/search_size_to_title"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/search_size_title"
-                app:layout_constraintVertical_bias="0.368" />
+            <!--            <TextView-->
+            <!--                android:id="@+id/search_size_from_title"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:paddingStart="20dp"-->
+            <!--                android:text="от"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                app:layout_constraintBottom_toTopOf="@+id/search_size_to_title"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/search_size_title"-->
+            <!--                app:layout_constraintVertical_bias="0.368" />-->
 
-            <EditText
-                android:id="@+id/search_size_from_edit"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:hint="45"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/search_size_from_title"
-                app:layout_constraintTop_toBottomOf="@id/search_size_title" />
+            <!--            <EditText-->
+            <!--                android:id="@+id/search_size_from_edit"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:hint="45"-->
+            <!--                android:inputType="number"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toEndOf="@+id/search_size_from_title"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/search_size_title" />-->
 
-            <TextView
-                android:id="@+id/search_size_to_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="20dp"
-                android:text="до"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/search_size_from_edit"
-                app:layout_constraintVertical_bias="0.127" />
+            <!--            <TextView-->
+            <!--                android:id="@+id/search_size_to_title"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:paddingStart="20dp"-->
+            <!--                android:text="до"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/search_size_from_edit"-->
+            <!--                app:layout_constraintVertical_bias="0.127" />-->
 
-            <EditText
-                android:id="@+id/search_size_to_edit"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:hint="80"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/search_size_to_title"
-                app:layout_constraintTop_toBottomOf="@id/search_size_from_edit" />
+            <!--            <EditText-->
+            <!--                android:id="@+id/search_size_to_edit"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:hint="80"-->
+            <!--                android:inputType="number"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toEndOf="@+id/search_size_to_title"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/search_size_from_edit" />-->
 
             <Button
                 android:id="@+id/search_submit"
@@ -234,23 +234,24 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:text="Поиск"
-                app:layout_constraintTop_toBottomOf="@id/search_size_to_edit"/>
+                android:backgroundTint="#AD0041"
+                app:layout_constraintTop_toBottomOf="@id/search_age_to_spinner"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <View
-        android:id="@+id/search_click_stub"
-        android:layout_marginTop="50dp"
-        android:clickable="true"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    <!--    <View-->
+    <!--        android:id="@+id/search_click_stub"-->
+    <!--        android:layout_marginTop="50dp"-->
+    <!--        android:clickable="true"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"/>-->
 
-    <ProgressBar
-        android:id="@+id/search_progress"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <!--    <ProgressBar-->
+    <!--        android:id="@+id/search_progress"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"/>-->
 
 </FrameLayout>

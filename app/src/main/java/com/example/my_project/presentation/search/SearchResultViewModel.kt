@@ -38,7 +38,7 @@ class SearchResultViewModel(
             _state.value = SearchResultState.Error(throwable)
         }) {
             val dogs = dogReprository.getAllDog(
-                AllDogTypes.ALL
+//                AllDogTypes.ALL
             )
             _state.value = SearchResultState.Succes(dogs)
         }

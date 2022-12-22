@@ -39,7 +39,21 @@ class DogDetailActivity : BaseActivity() {
         setContentView(R.layout.activity_dog_detail)
         val dog = intent.getParcelableExtra<Dog>(DOG_DETAIL_ARGUMENT_KEY)
 
+        fun ageToText(age: String): String {
+            if (age.toInt() == 0) return "меньше года"
+            else if (age.toInt() == 1) return "$age год"
+            else if (age.toInt() in 2..4) return "$age года"
+            else return "${age} лет"
+        }
+
+        fun genderToText(gender: String?): String {
+            if (gender == "male") return "мальчик"
+            else return "девочка"
+        }
+
         viewBinding.dogName.text = dog?.name
+        viewBinding.dogAge.text = ageToText(dog?.age!!.filter { it.isDigit() } )
+        viewBinding.dogGender.text = genderToText(dog?.gender)
         viewBinding.dogDetailPosters.setImageUrl(dog?.posterUrl)
         viewBinding.dogDescription.text = dog?.description
         viewBinding.dogContact.text = "По всем вопросам: ${dog?.contact}"

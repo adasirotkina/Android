@@ -26,7 +26,7 @@ class RandomDogAdapter(
 
 
     fun setData(dogs: List<Dog>) {
-       submitList(dogs)
+        submitList(dogs)
     }
 
     class Holder(val binding: RandomDogsItemsBinding): RecyclerView.ViewHolder(binding.root)
@@ -37,12 +37,25 @@ class RandomDogAdapter(
         return Holder(binding)
     }
 
+    fun ageToText(age: String): String {
+        if (age.toInt() == 0) return "меньше года"
+        else if (age.toInt() == 1) return "$age год"
+        else if (age.toInt() in 2..4) return "$age года"
+        else return "${age} лет"
+    }
+
+    fun genderToText(gender: String?): String {
+        if (gender == "male") return "мальчик"
+        else return "девочка"
+    }
+
     override fun onBindViewHolder(holder: Holder, position: Int) {
         val item = getItem(position)
         with(holder.binding){
             randomDogsItemName.text = item.name
-            randomDogsItemAge.text = item.age.toString()
+            randomDogsItemAge.text = ageToText(item.age.filter { it.isDigit() })
             randomDogPosters.setImageUrl(item.posterUrl)
+            randomDogsItemGender.text = genderToText(item.gender)
             root.setOnClickListener { onDogClick(item) }
         }
     }

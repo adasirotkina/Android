@@ -19,15 +19,19 @@ class SearchViewModel: ViewModel() {
 
     fun onSubmit(searchTyp: SearchType,
                  ageFrom:Int,
-                 ageTo:Int,
-                 sizeFrom:String,
-                 sizeTo:String,) {
+                 ageTo:Int,) {
 
-        val sizeFromInt = sizeFrom.toIntOrNull()
-        val sizeToInt = sizeTo.toIntOrNull()
+//        val sizeFromInt = sizeFrom.toIntOrNull()
+//        val sizeToInt = sizeTo.toIntOrNull()
+//
+//        if (sizeFromInt != null && sizeToInt != null && sizeFromInt > sizeToInt) {
+//            _errorMessage.value =  SearchErrorType.SIZE_FROM_MORE_THAN_TO
+//            return
+//        }
 
-        if (sizeFromInt != null && sizeToInt != null && sizeFromInt > sizeToInt) {
-            _errorMessage.value =  SearchErrorType.SIZE_FROM_MORE_THAN_TO
+
+        if (ageTo <= 0) {
+            _errorMessage.value =  SearchErrorType.AGE_TO_BELLOW_ONE
             return
         }
 
@@ -40,5 +44,5 @@ enum class SearchType{
 }
 
 enum class SearchErrorType{
-    SIZE_FROM_MORE_THAN_TO
+    SIZE_FROM_MORE_THAN_TO, AGE_TO_BELLOW_ONE
 }
