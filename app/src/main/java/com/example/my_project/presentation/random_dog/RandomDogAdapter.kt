@@ -5,10 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.Recycler
-import com.example.my_project.Dog
-import com.example.my_project.databinding.ActivityDogDetailBinding
+import com.example.my_project.entity.Dog
 import com.example.my_project.databinding.RandomDogsItemsBinding
+import com.example.my_project.presentation.common.setImageUrl
 
 class RandomDogAdapter(
     private val onDogClick: (Dog) -> Unit,
@@ -43,6 +42,7 @@ class RandomDogAdapter(
         with(holder.binding){
             randomDogsItemName.text = item.name
             randomDogsItemAge.text = item.age.toString()
+            randomDogPosters.setImageUrl(item.posterUrl)
             root.setOnClickListener { onDogClick(item) }
         }
     }

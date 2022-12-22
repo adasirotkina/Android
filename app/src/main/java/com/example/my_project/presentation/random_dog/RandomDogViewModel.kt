@@ -3,28 +3,50 @@ package com.example.my_project
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.my_project.domain.DogReprository
+import com.example.my_project.entity.Dog
 import com.example.my_project.presentation.common.SingleLiveEvent
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.launch
 
-class RandomDogViewModel(): ViewModel() {
-    private val _dogs = MutableLiveData(listOf<Dog>(
-        Dog("April", 2),
-        Dog("Rango", 6),
-        Dog("Goofy", 2),
-        Dog("Kliko", 3),
-        Dog("Layfa", 3),
-        Dog("Vikki", 4),
-        Dog("Salvador", 2),
-        Dog("Ocean", 1),
-        Dog("Night", 1),
-        Dog("Fiksik", 10),
-    ))
-
-    val dogs: LiveData<List<Dog>> = _dogs
+class RandomDogViewModel(
+    private val dogReprository: DogReprository
+): ViewModel() {
+    private val _state = MutableLiveData<RandomDogState>(RandomDogState.Loading)
+    val state: LiveData<RandomDogState> = _state
 
     private val _openDetail = SingleLiveEvent<Dog>()
     val openDetail: LiveData<Dog> = _openDetail
 
+    init {
+        loadData()
+    }
+
     fun onDogClick(dog: Dog) {
         _openDetail.value = dog
     }
+
+    fun onRetry() {
+        _state.value = RandomDogState.Loading
+        loadData()
+    }
+
+    private fun loadData(){
+        viewModelScope.launch(CoroutineExceptionHandler { coroutineContext, throwable ->
+            _state.value = RandomDogState.Error(throwable)
+        }) {
+            val dogs = dogReprository.getAllDog(
+//                AllDogTypes.ANIMALS, 100
+            )
+            _state.value = RandomDogState.Succes(dogs)
+        }
+
+    }
+}
+
+sealed interface RandomDogState{
+    object Loading:RandomDogState
+    class Error(val throwable: Throwable): RandomDogState
+    class Succes(val dogs:List<Dog>):RandomDogState
 }

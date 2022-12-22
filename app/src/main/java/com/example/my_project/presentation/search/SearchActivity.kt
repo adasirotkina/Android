@@ -10,6 +10,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.my_project.*
 import com.example.my_project.databinding.ActivitySearchBinding
 import com.example.my_project.presentation.common.BaseActivity
+import com.example.my_project.presentation.random_dog.RandomDogAdapter
 
 class SearchActivity : BaseActivity() {
 
@@ -73,7 +74,6 @@ class SearchActivity : BaseActivity() {
         }
     }
     private fun showError(text: String){
-        println("Error4 $text")
         Toast.makeText(this, text, Toast.LENGTH_LONG).show()
     }
     private fun SearchErrorType.toText(): String {
